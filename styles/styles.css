@@ -62,12 +62,18 @@ body {
 }
 
 .project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Légèrement relevée au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
 /* Contact links */
@@ -89,6 +95,7 @@ body {
 }
 
 .contact-link img {
+  vertical-align: middle;
   width: 24px;
   height: 24px;
 }
@@ -146,4 +153,77 @@ footer {
 
 .about-photos img:hover {
   transform: scale(1.1); /* Zoom léger au survol */
+}
+
+/* GIF des projets */
+.project-gif {
+  width: 100%; /* Le GIF prend la largeur disponible */
+  height: auto;
+  border-radius: 8px; /* Coins arrondis */
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.project-gif:hover {
+  transform: scale(1.01); /* Agrandit légèrement le GIF */
+  transition: transform 0.4s ease;
+}
+
+/* Projets links */
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-link img {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}
+
+.project-link:hover {
+  color: #007bff;
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+}
+
+.cv-download {
+  margin-top: 2rem; /* Augmente l'espace au-dessus du bouton */
+  text-align: center; /* Centre le bouton si ce n'est pas déjà fait */
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
