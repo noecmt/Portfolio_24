@@ -55,12 +55,38 @@ body {
   text-align: center;
 }
 
+/* Conteneur des photos dans À propos */
+.about-photos {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-photos img {
+  width: 300px;
+  height: 200px;
+  border-radius: 8%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-photos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
+/* Project card */
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #fff;
@@ -72,8 +98,58 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-10px); /* Légèrement relevée au survol */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* GIFs */
+.project-gif {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-gif:hover {
+  transform: scale(1.01);
+  transition: transform 0.4s ease;
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-link img {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}
+
+.project-link:hover {
+  color: #007bff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #333;
+  color: #fff;
 }
 
 /* Contact links */
@@ -102,15 +178,7 @@ body {
 
 .contact-link:hover {
   color: #007bff;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #333;
-  color: #fff;
-}
+} 
 
 /* Animations */
 #contact {
@@ -124,92 +192,11 @@ footer {
   transform: translateY(0);
 }
 
-/* Conteneur des photos */
-.about-photos { 
-  display: flex;
-  justify-content: center; /* Centre les photos horizontalement */
-  gap: 1.5rem; /* Espace entre les photos */
-  margin-top: 1.5rem; /* Ajoute de l’espace entre le texte et les photos */
-  flex-wrap: wrap; /* Les photos passent à la ligne sur petits écrans */
-}
 
-.about-photos img {
-  opacity: 0; /* Invisibles au départ */
-  width: 300px; /* Largeur des photos */
-  height: 200px; /* Hauteur des photos (carré) */
-  border-radius: 8px; /* Forme ronde */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-  object-fit: cover; /* Ajuste l’image pour qu’elle soit bien cadrée */
-  border: 3px solid #007bff; /* Bordure colorée */
-  transition: transform 0.3s ease; /* Animation au survol */  
-  transform: translateY(20px); /* Décalées vers le bas */
-  transition: opacity 0.6s ease, transform 0.6s ease; /* Animation fluide */
-}
-
-.about-photos img.visible {
-  opacity: 1; /* Deviennent visibles */
-  transform: translateY(0); /* Repositionnées normalement */
-}
-
-.about-photos img:hover {
-  transform: scale(1.1); /* Zoom léger au survol */
-}
-
-/* GIF des projets */
-.project-gif {
-  width: 100%; /* Le GIF prend la largeur disponible */
-  height: auto;
-  border-radius: 8px; /* Coins arrondis */
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-}
-
-.project-gif:hover {
-  transform: scale(1.01); /* Agrandit légèrement le GIF */
-  transition: transform 0.4s ease;
-}
-
-/* Projets links */
-.project-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.project-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
-}
-
-.project-link img {
-  vertical-align: middle;
-  width: 24px;
-  height: 24px;
-}
-
-.project-link:hover {
-  color: #007bff;
-}
-
-@media (max-width: 600px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
-  }
-
-  .project-card {
-    padding: 1rem;
-  }
-}
-
+/* Button styles */
 .cv-download {
-  margin-top: 2rem; /* Augmente l'espace au-dessus du bouton */
-  text-align: center; /* Centre le bouton si ce n'est pas déjà fait */
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .btn {
@@ -226,4 +213,20 @@ footer {
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .about-photos img {
+    width: 100px;
+    height: 100px;
+  }
 }
