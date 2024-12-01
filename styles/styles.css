@@ -1,0 +1,149 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Header (menu) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #111;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Contact links */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-link:hover {
+  color: #007bff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #333;
+  color: #fff;
+}
+
+/* Animations */
+#contact {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Conteneur des photos */
+.about-photos { 
+  display: flex;
+  justify-content: center; /* Centre les photos horizontalement */
+  gap: 1.5rem; /* Espace entre les photos */
+  margin-top: 1.5rem; /* Ajoute de l’espace entre le texte et les photos */
+  flex-wrap: wrap; /* Les photos passent à la ligne sur petits écrans */
+}
+
+.about-photos img {
+  opacity: 0; /* Invisibles au départ */
+  width: 300px; /* Largeur des photos */
+  height: 200px; /* Hauteur des photos (carré) */
+  border-radius: 8px; /* Forme ronde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  object-fit: cover; /* Ajuste l’image pour qu’elle soit bien cadrée */
+  border: 3px solid #007bff; /* Bordure colorée */
+  transition: transform 0.3s ease; /* Animation au survol */  
+  transform: translateY(20px); /* Décalées vers le bas */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Animation fluide */
+}
+
+.about-photos img.visible {
+  opacity: 1; /* Deviennent visibles */
+  transform: translateY(0); /* Repositionnées normalement */
+}
+
+.about-photos img:hover {
+  transform: scale(1.1); /* Zoom léger au survol */
+}
